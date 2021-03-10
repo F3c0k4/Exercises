@@ -81,7 +81,7 @@ func main() {
 	}
 
 	//Exercise 8
-	fmt.Println("\n\tExercise 8")
+	fmt.Println("\n\tExercise 8\n")
 
 	mymap := map[string][]string{
 		`bond_james`:      {`Shaken, not stirred`, `Martinis`, `Women`},
@@ -93,5 +93,22 @@ func main() {
 		for i, str := range v {
 			fmt.Println("Key in map: ", k, " Index in slice: ", i, " Value in slice: ", str)
 		}
+	}
+
+	//Exercise 9
+	fmt.Println("\n\tExercise 9\n")
+
+	mymap["Me"] = []string{"Computer science", "Motorcycles", "Valorant"}
+
+	for k, v := range mymap {
+		fmt.Println(k, ": \t", v)
+	}
+
+	//Exercise 10
+	fmt.Println("\n\tExercise 10\n")
+
+	delete(mymap, "no_dr")
+	for k, v := range mymap {
+		fmt.Println(k, ": \t", v)
 	}
 }
