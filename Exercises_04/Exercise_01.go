@@ -56,4 +56,42 @@ func main() {
 	o = append(o, u[6:]...)
 
 	fmt.Println(o)
+
+	//Exercise 6
+	fmt.Println("\n\tExercise 6\n")
+
+	p := []string{` Alabama`, ` Alaska`, ` Arizona`, ` Arkansas`, ` California`, ` Colorado`, ` Connecticut`, ` Delaware`, ` Florida`, ` Georgia`, ` Hawaii`, ` Idaho`, ` Illinois`, ` Indiana`, ` Iowa`, ` Kansas`, ` Kentucky`, ` Louisiana`, ` Maine`, ` Maryland`, ` Massachusetts`, ` Michigan`, ` Minnesota`, ` Mississippi`, ` Missouri`, ` Montana`, ` Nebraska`, ` Nevada`, ` New Hampshire`, ` New Jersey`, ` New Mexico`, ` New York`, ` North Carolina`, ` North Dakota`, ` Ohio`, ` Oklahoma`, ` Oregon`, ` Pennsylvania`, ` Rhode Island`, ` South Carolina`, ` South Dakota`, ` Tennessee`, ` Texas`, ` Utah`, ` Vermont`, ` Virginia`, ` Washington`, ` West Virginia`, ` Wisconsin`, ` Wyoming`}
+	for i := 0; i < len(p); i++ {
+		fmt.Println(i, p[i])
+	}
+
+	fmt.Printf("Length: %v, Capacity: %v\n", len(p), cap(p))
+
+	//Exercise 7
+	fmt.Println("\n\tExercise 7\n")
+
+	sli1 := []string{"James", "Bond", "Shaken, not stirred"}
+	sli2 := []string{"Miss", "Moneypenny", "Helloooooo, James."}
+
+	sli3 := [][]string{sli1, sli2}
+	for i, sli_2d := range sli3 {
+		for j, v := range sli_2d {
+			fmt.Println("Idx1: ", i, " Idx2: ", j, " Value: ", v)
+		}
+	}
+
+	//Exercise 8
+	fmt.Println("\n\tExercise 8")
+
+	mymap := map[string][]string{
+		`bond_james`:      {`Shaken, not stirred`, `Martinis`, `Women`},
+		`moneypenny_miss`: {`James Bond`, `Literature`, `Computer Science`},
+		`no_dr`:           {`Being evil`, `Ice cream`, `Sunsets`},
+	}
+
+	for k, v := range mymap {
+		for i, str := range v {
+			fmt.Println("Key in map: ", k, " Index in slice: ", i, " Value in slice: ", str)
+		}
+	}
 }
