@@ -1,12 +1,14 @@
 package main
 
+import "fmt"
+
 func main() {
 
 	c := make(chan int)
-	go func() {
-		receive(c)
-		send(c)
-	}()
+	go receive(c)
+	for v := range c {
+		fmt.Println(v)
+	}
 
 }
 
@@ -15,5 +17,9 @@ func send(c <-chan int) {
 }
 
 func receive(c chan<- int) {
-	c <- 1
+	for i := 0; i < 20; i++ {
+		c <- 1
+	}
+	close(c)
+
 }
